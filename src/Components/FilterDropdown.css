@@ -1,0 +1,16 @@
+button{
+    margin: 0.7rem;
+    border: 1px solid palevioletred;
+    background-color: white;
+    padding: 5px;
+    height: 30px;
+    /* padding-right: 20px; */  
+}
+.mainheader{
+    display: flex;
+    
+}
+
+/* .sitename{
+    justify-content: center;
+} */

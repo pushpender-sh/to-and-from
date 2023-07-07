@@ -3,7 +3,10 @@
 }
 
 .buttons{
-    margin-top: 1rem;
+    margin: 1rem;
+    padding: 10px;
+    display: flex;
+    margin-left: 25px;
 }
 
 .item{
@@ -13,11 +16,25 @@
 }
 .seefilters{
     border: 2px solid black;
-    padding: 15px ;
-    width: 200px;
-    margin: 2rem auto;
+    /* padding: 15px ; */
+    /* width: 200px; */
+    /* margin: 2rem ; */
     /* box-sizing: border-box; */
 }
-/* .filters{
-    display: flex;
-} */
+.display{
+    border: 1px solid grey;
+    border-radius: 1rem;
+    padding: 10px;
+    margin: 1rem;
+    width: 300px;
+    box-shadow: 3px 3px #888888;
+    
+    
+}
+.filters{
+    margin: 2rem;
+}
+.select{
+    border-color: rgb(133, 133, 196);
+    border-radius: 1rem;
+}

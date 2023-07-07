@@ -1,13 +1,16 @@
 // import logo from './logo.svg';
 import './App.css';
-import Home from './Home';
+import React from 'react'
+import NavBar from './NavBar'
+import Header from './Components/Header'
 
-function App() {
+
+export default function App() {
+
   return (
-    <div className="App">
-     <Home/>
+    <div>
+     <NavBar/>
+     <Header/>
     </div>
-  );
+  )
 }
-
-export default App;

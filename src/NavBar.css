@@ -1,7 +1,7 @@
 .navbar{
     display: flex;
     column-gap: 20px;
-    background-color: pink;
+    background-color: rgb(227, 87, 110);
     padding: 10px 20px 10px 0px; 
     justify-content: flex-end;
 }
