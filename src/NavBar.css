@@ -1,0 +1,8 @@
+.navbar{
+    display: flex;
+    column-gap: 20px;
+    background-color: pink;
+    padding: 10px 20px 10px 0px; 
+    justify-content: flex-end;
+}
+

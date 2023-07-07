@@ -1,0 +1,23 @@
+ .clear{
+    margin-left: 1rem;
+}
+
+.buttons{
+    margin-top: 1rem;
+}
+
+.item{
+    background-color: gray;
+    margin: 3px;
+    border: 1px solid black;
+}
+.seefilters{
+    border: 2px solid black;
+    padding: 15px ;
+    width: 200px;
+    margin: 2rem auto;
+    /* box-sizing: border-box; */
+}
+/* .filters{
+    display: flex;
+} */
