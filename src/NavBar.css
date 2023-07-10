@@ -1,8 +1,17 @@
 .navbar{
     display: flex;
     column-gap: 20px;
-    background-color: rgb(227, 87, 110);
+    background-color: rgb(212,39,103);
     padding: 10px 20px 10px 0px; 
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
+.signin{
+    display: flex;
+    column-gap: 20px;
+    margin-right: 1rem;
+}
+
+.quiz{
+    margin-left: 2rem;
+}

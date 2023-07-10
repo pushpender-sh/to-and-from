@@ -1,8 +1,7 @@
 import "./Filters.css";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-
-export default function Filters() {
+export default function Filters({buttonstate}) {
   const [SearchParams, setSearchParams] = useSearchParams();
   const [state, setState] = useState({
     genders: [],
@@ -40,7 +39,7 @@ export default function Filters() {
 function Filteroption(filtrevalue, filtername, Id,setId){
   return(
     <div className=" filters">
-    <label> {filtername} <br/>
+    <label> {filtername} <br/> 
     <select className="select"
     style={{width:"210px", height:"40px"}}
         value={Id}
@@ -67,10 +66,12 @@ function DisplayFilters() {
   const handleApply = () => {
       // let filters = [];
       setSearchParams({gender:genderId, occasion: occasionId, relationship:relationshipId})
+      buttonstate(false);
   };
 
   const handleDelete = () => {
       setSearchParams({})
+      buttonstate(false);
   };
 
   return (
@@ -91,6 +92,15 @@ function DisplayFilters() {
 
   return (
     <div className="display">
+      <div className="top-part">
+        <div>Filters </div>
+        <div className='cross' onClick={()=>{buttonstate(false)}}>&times;</div>
+      </div>
+      <div>
+       <button class="dealbutton" tabindex="0" type="button" >
+         Just show me great gifts  </button>
+      </div>
+
      { Filteroption(state.genders,"Gender",genderId, setGenderId)}
      { Filteroption(state.occasions, "Occasion", occasionId, setOccasionId)}
      { Filteroption(state.relationships, "Relationship",  relationshipId, setRelationshipId)}
