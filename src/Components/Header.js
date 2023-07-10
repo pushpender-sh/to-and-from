@@ -28,7 +28,7 @@ export default function FilterDropdown() {
             Gift Filters |
             {<RiArrowDropDownLine />}
           </button>
-        <select className="sort-by" placeholder='Sort By'>
+        <select className="sort-by">
           <option>Sort By</option>
           <option>hey</option>
           <option>hey</option>
