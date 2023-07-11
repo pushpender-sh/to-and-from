@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState} from 'react'
 import './Header.css'
 import Filters from './Filters'
 import { BsCart4 } from 'react-icons/bs'
@@ -8,11 +8,11 @@ import { RiArrowDropDownLine } from 'react-icons/ri'
 
 
 
-export default function Header( {state, setState ,SearchParams, setSearchParams,  
-  genderId , occasionId, relationshipId, setGenderId, setOccasionId, setRelationshipId}) {
+export default function Header( {state, setState ,searchparams, setSearchParams,  
+  genderId , occasionId, relationshipId, setGenderId, setOccasionId,
+   setRelationshipId, sortbyvalue, setSortbyvalue }) {
     
   const [isbuttonopen, setIsbuttonopen] = useState(false)
-  const [sortbyvalue, setSortbyvalue] = useState(SearchParams.get("orderby")?? "")
 
   const handleClick = () => {
     if (isbuttonopen) {
@@ -33,12 +33,11 @@ export default function Header( {state, setState ,SearchParams, setSearchParams,
             <select className="sort-by"
             value={sortbyvalue}
             onChange={(e)=>{
-              SearchParams.delete("orderby");
+              searchparams.delete("orderby");
               setSortbyvalue(e.target.value)
-              SearchParams.append("orderby", e.target.value)
-              setSearchParams(SearchParams);
+              searchparams.append("orderby", e.target.value)
+              setSearchParams(searchparams);
             }}
-            
             >
             <option value={""} className='sortby-options'>Sort By</option>
             <option value={"ASC Price"} className='sortby-options'>Price: Low to High</option>
@@ -58,9 +57,10 @@ export default function Header( {state, setState ,SearchParams, setSearchParams,
 
       </div>
       <div> {isbuttonopen && <Filters buttonstate={setIsbuttonopen} 
-       state={state} setState={setState} SearchParams={SearchParams} setSearchParams={setSearchParams} 
+       state={state} setState={setState} searchparams={searchparams} setSearchParams={setSearchParams} 
        genderId= {genderId} occasionId={occasionId} relationshipId={relationshipId}
        setGenderId={setGenderId} setOccasionId={setOccasionId} setRelationshipId={setRelationshipId}
+       sortbyvalue={sortbyvalue} setSortbyvalue={setSortbyvalue}
        />}</div>
 
     </div>

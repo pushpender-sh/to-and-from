@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [SearchParams, setSearchParams] = useSearchParams();
+  const [searchparams, setSearchParams] = useSearchParams();
   const [state, setState] = useState({
     genders: [],
     occasions: [],
@@ -12,19 +12,19 @@ export const UserProvider = ({ children }) => {
   });
 
   const [genderId, setGenderId] = useState(
-    SearchParams.get("gender") ?? ""
+    searchparams.get("gender") ?? ""
   );
   const [occasionId, setOccasionId] = useState(
-    SearchParams.get("occasion") ?? ""
+    searchparams.get("occasion") ?? ""
   );
   const [relationshipId, setRelationshipId] = useState(
-    SearchParams.get("relationship") ?? ""
+    searchparams.get("relationship") ?? ""
   );
 
   return (
     <UserContext.Provider
       value={{
-        SearchParams,
+        searchparams,
         setSearchParams,
         state,
         setState,

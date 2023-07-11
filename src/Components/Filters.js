@@ -1,8 +1,8 @@
 import "./Filters.css";
 
 
-export default function Filters({buttonstate , state, setState ,SearchParams, setSearchParams,  
-  genderId , occasionId, relationshipId, setGenderId, setOccasionId, setRelationshipId}) {
+export default function Filters({buttonstate , state, setState ,searchparams, setSearchParams,  
+  genderId , occasionId, relationshipId, setGenderId, setOccasionId, setRelationshipId, sortbyvalue, setSortbyvalue }) {
     
 // console.log(state)
 
@@ -12,7 +12,7 @@ function Filteroption(filtrevalue, filtername, Id,setId){
     <label> {filtername} <br/> 
     <select className="select"
     style={{width:"210px", height:"40px"}}
-        value={Id}
+        value={searchparams.get(Id)}
         onChange={(e) => {
           setId(e.target.value)
         }
@@ -35,15 +35,25 @@ function DisplayFilters() {
   // const [appliedFilters, setAppliedFilters] = useState([]);
   const handleApply = () => {
       // let filters = [];
-      SearchParams.append("gender", genderId)
-      SearchParams.append("occasion", occasionId)
-      SearchParams.append("relationship", relationshipId)
-     setSearchParams(SearchParams);
-      // buttonstate(false);
-  };
+      setSearchParams({
+        gender: genderId,
+        occasion: occasionId,
+        relationship: relationshipId,
+        orderby: sortbyvalue
+      });
+      buttonstate(false);
+    }
 
   const handleDelete = () => {
-      setSearchParams({})
+    setGenderId("");
+    setOccasionId("");
+    setRelationshipId("");
+    // const updatedSearchParams = new URLSearchParams(searchparams);
+    setSearchParams({})
+    // searchparams.delete("gender");
+    // searchparams.delete("occasion");
+    // searchparams.delete("relationship");
+    // setSearchParams(searchparams);
       buttonstate(false);
   };
 

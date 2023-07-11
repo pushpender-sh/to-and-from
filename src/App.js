@@ -10,16 +10,19 @@ import Body from './Components/Body';
 
 export default function App() {
 
-  const [SearchParams, setSearchParams] = useSearchParams();
+  const [searchparams, setSearchParams] = useSearchParams();
     const [state, setState] = useState({
       genders: [],
       occasions: [],
       relationships: [],
     });
     
-    const [genderId, setGenderId] = useState(SearchParams.get("gender")?? "");
-    const [occasionId, setOccasionId] = useState(SearchParams.get("occasion")?? "");
-    const [relationshipId, setRelationshipId] = useState(SearchParams.get("relationship")?? "");
+    const [genderId, setGenderId] = useState(searchparams.get("gender")?? "");
+    const [occasionId, setOccasionId] = useState(searchparams.get("occasion")?? "");
+    const [relationshipId, setRelationshipId] = useState(searchparams.get("relationship")?? "");
+
+    const [sortbyvalue, setSortbyvalue] = useState(searchparams.get("orderby")?? "")
+
 
 
   useEffect(() => {
@@ -49,14 +52,16 @@ export default function App() {
   return (
     <div>
      <NavBar/>
-     
-     <Header  state={state} setState={setState} SearchParams={SearchParams} setSearchParams={setSearchParams} 
-      genderId= {genderId} occasionId={occasionId} relationshipId={relationshipId}
-      setGenderId={setGenderId} setOccasionId={setOccasionId} setRelationshipId={setRelationshipId} />
 
-     <Body state={state} setState={setState} SearchParams={SearchParams} setSearchParams={setSearchParams} 
+     <Header  state={state} setState={setState} searchparams={searchparams} setSearchParams={setSearchParams} 
       genderId= {genderId} occasionId={occasionId} relationshipId={relationshipId}
-      setGenderId={setGenderId} setOccasionId={setOccasionId} setRelationshipId={setRelationshipId} />
+      setGenderId={setGenderId} setOccasionId={setOccasionId} setRelationshipId={setRelationshipId}
+      sortbyvalue={sortbyvalue} setSortbyvalue={setSortbyvalue} />
+
+     <Body state={state} setState={setState} searchparams={searchparams} setSearchParams={setSearchParams} 
+      genderId= {genderId} occasionId={occasionId} relationshipId={relationshipId}
+      setGenderId={setGenderId} setOccasionId={setOccasionId} setRelationshipId={setRelationshipId}
+      sortbyvalue={sortbyvalue} setSortbyvalue={setSortbyvalue} />
     </div>
   )
 }
