@@ -48,12 +48,15 @@ export default function App() {
 
   return (
     <div>
-     <NavBar
-      />
+     <NavBar/>
+     
      <Header  state={state} setState={setState} SearchParams={SearchParams} setSearchParams={setSearchParams} 
       genderId= {genderId} occasionId={occasionId} relationshipId={relationshipId}
       setGenderId={setGenderId} setOccasionId={setOccasionId} setRelationshipId={setRelationshipId} />
-     <Body/>
+
+     <Body state={state} setState={setState} SearchParams={SearchParams} setSearchParams={setSearchParams} 
+      genderId= {genderId} occasionId={occasionId} relationshipId={relationshipId}
+      setGenderId={setGenderId} setOccasionId={setOccasionId} setRelationshipId={setRelationshipId} />
     </div>
   )
 }

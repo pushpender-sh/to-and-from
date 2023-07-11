@@ -3,9 +3,9 @@ import "./Filters.css";
 
 export default function Filters({buttonstate , state, setState ,SearchParams, setSearchParams,  
   genderId , occasionId, relationshipId, setGenderId, setOccasionId, setRelationshipId}) {
- 
     
 // console.log(state)
+
 function Filteroption(filtrevalue, filtername, Id,setId){
   return(
     <div className=" filters">
@@ -35,7 +35,10 @@ function DisplayFilters() {
   // const [appliedFilters, setAppliedFilters] = useState([]);
   const handleApply = () => {
       // let filters = [];
-      setSearchParams({gender:genderId, occasion: occasionId, relationship:relationshipId})
+      SearchParams.append("gender", genderId)
+      SearchParams.append("occasion", occasionId)
+      SearchParams.append("relationship", relationshipId)
+     setSearchParams(SearchParams);
       // buttonstate(false);
   };
 
@@ -58,6 +61,7 @@ function DisplayFilters() {
       </div>
   );
 }
+
 
   return (
     <div className="display">
