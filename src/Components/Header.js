@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Header.css'
 import Filters from './Filters'
 import { BsCart4 } from 'react-icons/bs'
@@ -8,7 +8,11 @@ import { RiArrowDropDownLine } from 'react-icons/ri'
 
 
 
-export default function FilterDropdown() {
+export default function Header( {state, setState ,SearchParams, setSearchParams,  
+  genderId , occasionId, relationshipId, setGenderId, setOccasionId, setRelationshipId}) {
+    
+  
+
   const [isbuttonopen, setIsbuttonopen] = useState(false)
 
   const handleClick = () => {
@@ -42,7 +46,11 @@ export default function FilterDropdown() {
         </div>
 
       </div>
-      <div> {isbuttonopen && <Filters buttonstate={setIsbuttonopen} />}</div>
+      <div> {isbuttonopen && <Filters buttonstate={setIsbuttonopen} 
+       state={state} setState={setState} SearchParams={SearchParams} setSearchParams={setSearchParams} 
+       genderId= {genderId} occasionId={occasionId} relationshipId={relationshipId}
+       setGenderId={setGenderId} setOccasionId={setOccasionId} setRelationshipId={setRelationshipId}
+       />}</div>
 
     </div>
   );
