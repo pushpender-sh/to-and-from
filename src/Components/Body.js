@@ -38,11 +38,25 @@ export default function Body({ state, setState, searchparams, setSearchParams,
       console.log("empty")
       return 
     }
-
+    let displayValue=""
+    if(findSortby==="priceASC"){
+      displayValue="Price: Low to High"
+    } else if(findSortby==="priceDSC"){
+      displayValue="Price: High to Low"
+    } else if( findSortby==="newest"){
+      displayValue="Sort: Newest"
+    } else if(findSortby==="hotgifts"){
+      displayValue="Sort: Hotgifts"
+    } else if(findSortby==="promotion"){
+      displayValue="Sort: Promotion"
+    } else if(findSortby==="toandfrom"){
+      displayValue="Sort: To&From Marketplace"
+    }
+    
     return(
       <span className='sortbyname'>
       <div className='sortbyclass'>
-        Sort: {sortbyvalue}
+        {displayValue}
       </div>
        <div className='cross' onClick={() => {
         searchparams.delete("orderby")
@@ -51,6 +65,7 @@ export default function Body({ state, setState, searchparams, setSearchParams,
       </span>
     )
   }
+  
 
   return (
     <div className='mainbody'>

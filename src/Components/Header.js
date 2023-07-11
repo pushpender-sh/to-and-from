@@ -30,6 +30,7 @@ export default function Header( {state, setState ,searchparams, setSearchParams,
             Gift Filters |
             {<RiArrowDropDownLine />}
           </button>
+
             <select className="sort-by"
             value={sortbyvalue}
             onChange={(e)=>{
@@ -40,12 +41,12 @@ export default function Header( {state, setState ,searchparams, setSearchParams,
             }}
             >
             <option value={""} className='sortby-options'>Sort By</option>
-            <option value={"ASC Price"} className='sortby-options'>Price: Low to High</option>
-            <option value={"DSC Price"} className='sortby-options'>Price: High to Low</option>
+            <option value={"priceASC"}  className='sortby-options'>Price: Low to High</option>
+            <option value={"priceDSC"} className='sortby-options'>Price: High to Low</option>
             <option value={"hotgifts"} className='sortby-options'>Hot Gifts</option>
             <option value={"newest"} className='sortby-options'>Newest</option>
             <option value={"promotions"} className='sortby-options'>Promotions</option>
-            <option value={"marketplace"} className='sortby-options'>To&From Marketplace</option>
+            <option value={"toandfrom"} className='sortby-options'>To&From Marketplace</option>
           </select>
         </div>
         <span className='sitename'> To&From </span>
