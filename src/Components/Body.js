@@ -9,7 +9,7 @@ export default function Body({ state, setState, searchparams, setSearchParams,
   function giveFilter(data, filterValue) {
     let FindId = searchparams.get(filterValue);
     if (!FindId) {
-      console.log("empty")
+     // console.log("empty")
       return 
     }
     let filtername = ''
@@ -35,7 +35,7 @@ export default function Body({ state, setState, searchparams, setSearchParams,
   function giveSortby(){
     let findSortby=searchparams.get("orderby");
     if (!findSortby) {
-      console.log("empty")
+      //console.log("empty")
       return 
     }
     let displayValue=""
