@@ -2,16 +2,16 @@ import "./Filters.css";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 export default function Filters({buttonstate}) {
-  const [SearchParams, setSearchParams] = useSearchParams();
-  const [state, setState] = useState({
-    genders: [],
-    occasions: [],
-    relationships: [],
-  });
-
-  const [genderId, setGenderId] = useState(SearchParams.get("gender")?? "");
-  const [occasionId, setOccasionId] = useState(SearchParams.get("occasion")?? "");
-  const [relationshipId, setRelationshipId] = useState(SearchParams.get("relationship")?? "");
+    const [SearchParams, setSearchParams] = useSearchParams();
+    const [state, setState] = useState({
+      genders: [],
+      occasions: [],
+      relationships: [],
+    });
+    
+    const [genderId, setGenderId] = useState(SearchParams.get("gender")?? "");
+    const [occasionId, setOccasionId] = useState(SearchParams.get("occasion")?? "");
+    const [relationshipId, setRelationshipId] = useState(SearchParams.get("relationship")?? "");
 
 
   useEffect(() => {
@@ -66,7 +66,7 @@ function DisplayFilters() {
   const handleApply = () => {
       // let filters = [];
       setSearchParams({gender:genderId, occasion: occasionId, relationship:relationshipId})
-      buttonstate(false);
+      // buttonstate(false);
   };
 
   const handleDelete = () => {
@@ -97,8 +97,8 @@ function DisplayFilters() {
         <div className='cross' onClick={()=>{buttonstate(false)}}>&times;</div>
       </div>
       <div>
-       <button class="dealbutton" tabindex="0" type="button" >
-         Just show me great gifts  </button>
+       <button className="dealbutton" type="button" >
+         Just show me great gifts  </button> <br/><hr/>
       </div>
 
      { Filteroption(state.genders,"Gender",genderId, setGenderId)}

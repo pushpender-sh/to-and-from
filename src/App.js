@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react'
 import NavBar from './Components/NavBar'
 import Header from './Components/Header'
+import Body from './Components/Body';
 
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
     <div>
      <NavBar/>
      <Header/>
+     <Body/>
     </div>
   )
 }
