@@ -45,7 +45,7 @@ export default function Header( {state, setState ,searchparams, setSearchParams,
             <option value={"priceDSC"} className='sortby-options'>Price: High to Low</option>
             <option value={"hotgifts"} className='sortby-options'>Hot Gifts</option>
             <option value={"newest"} className='sortby-options'>Newest</option>
-            <option value={"promotions"} className='sortby-options'>Promotions</option>
+            <option value={"discount_percentage"} className='sortby-options'>Promotions</option>
             <option value={"toandfrom"} className='sortby-options'>To&From Marketplace</option>
           </select>
         </div>

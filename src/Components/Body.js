@@ -47,7 +47,7 @@ export default function Body({ state, setState, searchparams, setSearchParams,
       displayValue="Sort: Newest"
     } else if(findSortby==="hotgifts"){
       displayValue="Sort: Hotgifts"
-    } else if(findSortby==="promotion"){
+    } else if(findSortby==="discount_percentage"){
       displayValue="Sort: Promotion"
     } else if(findSortby==="toandfrom"){
       displayValue="Sort: To&From Marketplace"
@@ -65,7 +65,7 @@ export default function Body({ state, setState, searchparams, setSearchParams,
       </span>
     )
   }
-  
+
 
   return (
     <div className='mainbody'>
