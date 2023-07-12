@@ -13,9 +13,9 @@ export default function Body({ state, setState, searchparams, setSearchParams,
         return (
         <div className='button-on-body'>
           <div>Filters: </div>
-            {giveFilter(state.genders, "gender", "Gift For")}
-            {giveFilter(state.occasions, "occasion", "Occasion")}
-            {giveFilter(state.relationships, "relationship", "Relationship")}
+            {giveFilter(state.genders, setGenderId, "gender", "Gift For")}
+            {giveFilter(state.occasions,  setOccasionId,"occasion", "Occasion")}
+            {giveFilter(state.relationships,  setRelationshipId,"relationship", "Relationship")}
             {giveSortby()}
 
           <div className='on-body-clear-button' onClick={() => {
@@ -35,7 +35,7 @@ export default function Body({ state, setState, searchparams, setSearchParams,
 
     }
 
-  function giveFilter(data, filterValue, filternameOnScreen) {
+  function giveFilter(data, setId, filterValue, filternameOnScreen) {
     let FindId = searchparams.get(filterValue);
     if (!FindId) {
      // console.log("empty")
@@ -57,7 +57,7 @@ export default function Body({ state, setState, searchparams, setSearchParams,
          <div className='cross' onClick={() => {
           searchparams.delete(filterValue)
           setSearchParams(searchparams)
-          
+          setId("");
         }}>&times;</div>
       </span>
     )

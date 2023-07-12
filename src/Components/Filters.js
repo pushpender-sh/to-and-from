@@ -9,16 +9,16 @@ export default function Filters({buttonstate , state, setState ,searchparams, se
 function Filteroption(filtrevalue, filtername, Id,setId){
   return(
     <div className=" filters">
-    <label> {filtername} <br/> 
+    <label style={{color:"#266270"}}>  {filtername} <br/> 
     <select className="select"
-    style={{width:"210px", height:"40px"}}
-        value={Id}
+    style={{width:"280px", height:"50px"}}
+        value={Id ?? searchparams.get(filtername)}
         onChange={(e) => {
           setId(e.target.value)
         }
         }
       >
-        <option value="">None</option>
+        <option value="" hidden>None</option>
         {filtrevalue.map((item) => (
           <option value={item.id} key={item.id}>
             {item.name}
@@ -34,18 +34,26 @@ function Filteroption(filtrevalue, filtername, Id,setId){
 function DisplayFilters() {
   // const [appliedFilters, setAppliedFilters] = useState([]);
   const handleApply = () => {
-      // let filters = [];
-      setSearchParams({
-        gender: genderId,
-        occasion: occasionId,
-        relationship: relationshipId,
-        orderby: sortbyvalue
-      });
+    const params = {};
+    if (genderId !== "") {
+      params.gender = genderId;
+    }
+    if (occasionId !== "") {
+      params.occasion = occasionId;
+    }
+    if (relationshipId !== "") {
+      params.relationship = relationshipId;
+    }
+    if (sortbyvalue !== "") {
+      params.orderby = sortbyvalue;
+    }
+    setSearchParams(params);
+  
       
       if(genderId==="" && occasionId==="" && relationshipId===""){
         setSearchParams("")
       }
-      
+
       buttonstate(false);
     }
 
