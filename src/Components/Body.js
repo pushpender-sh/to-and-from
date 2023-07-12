@@ -11,7 +11,7 @@ export default function Body({ state, setState, searchparams, setSearchParams,
     const hasParameters = queryString.length > 1;
     if(hasParameters){
       return(
-        <div>Filters</div>
+        <div>Filters: </div>
       )
     } else{
       return
