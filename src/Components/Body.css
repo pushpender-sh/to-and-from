@@ -34,3 +34,6 @@
     font-size: larger;
     padding-bottom: 4px;
 }
+.cross:hover{
+    cursor: pointer;
+}

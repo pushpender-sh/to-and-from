@@ -5,6 +5,19 @@ import './Body.css'
 export default function Body({ state, setState, searchparams, setSearchParams,
   genderId, occasionId, relationshipId, setGenderId, setOccasionId, 
   setRelationshipId, sortbyvalue, setSortbyvalue }) {
+  
+    function Filtertext(){
+      const queryString = window.location.search;
+    const hasParameters = queryString.length > 1;
+    if(hasParameters){
+      return(
+        <div>Filters</div>
+      )
+    } else{
+      return
+    }
+
+    }
 
   function giveFilter(data, filterValue) {
     let FindId = searchparams.get(filterValue);
@@ -61,6 +74,7 @@ export default function Body({ state, setState, searchparams, setSearchParams,
        <div className='cross' onClick={() => {
         searchparams.delete("orderby")
         setSearchParams(searchparams)
+        setSortbyvalue("")
       }}>&times;</div>
       </span>
     )
@@ -69,7 +83,7 @@ export default function Body({ state, setState, searchparams, setSearchParams,
 
   return (
     <div className='mainbody'>
-      Filters:
+      {Filtertext()}
       {giveFilter(state.genders, "gender")}
       {giveFilter(state.occasions, "occasion")}
       {giveFilter(state.relationships, "relationship")}

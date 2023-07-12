@@ -1,6 +1,11 @@
  .clear{
     margin-left: 1rem;
 }
+button{
+    height: 30px;
+    background-color: #3c8a9b;
+    
+}
 
 .buttons{
     margin: 1rem;
@@ -9,9 +14,9 @@
     margin-left: 20px;
 }
 
-.clear:hover, .apply:hover, .cross:hover{
+.clear:hover, .apply:hover, .bigcross:hover{
     cursor: pointer;
-    background-color: rgba(233, 52, 91, 0.752);
+    background-color: #1b758a;
 }
 .item{
     background-color: gray;
@@ -49,7 +54,7 @@
     border-radius: 5px;
 }
 .dealbutton{
-    background-color: white;
+    background-color: #F5F5F5;
     height: auto;
     width: 220px;
     height: 50px;
@@ -57,4 +62,15 @@
     margin-top: 20px;
     margin-bottom: 10px;
 
+}
+.bigcross{
+    height: 20px;
+    width:  23px;
+    font-weight:bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100% ;
+    font-size: 30px;
+    padding-bottom: 4px;
 }

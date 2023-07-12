@@ -12,7 +12,7 @@ function Filteroption(filtrevalue, filtername, Id,setId){
     <label> {filtername} <br/> 
     <select className="select"
     style={{width:"210px", height:"40px"}}
-        value={searchparams.get(Id)}
+        value={Id}
         onChange={(e) => {
           setId(e.target.value)
         }
@@ -60,10 +60,10 @@ function DisplayFilters() {
   return (
       <div className="bothbutton">
           <div className="buttons">
-              <button className="apply" onClick={handleApply}>
+              <button className="apply" onClick={handleApply}  style={{fontSize:"15px"}}>
                   Apply Changes
               </button>
-              <button className="clear" onClick={handleDelete}>
+              <button className="clear" onClick={handleDelete} style={{fontSize:"15px"}} >
                   Clear Filters
               </button>
           </div>
@@ -77,7 +77,7 @@ function DisplayFilters() {
     <div className="display">
       <div className="top-part">
         <div>Filters </div>
-        <div className='cross' onClick={()=>{buttonstate(false)}}>&times;</div>
+        <div className='bigcross' onClick={()=>{buttonstate(false)}}>&times;</div>
       </div>
       <div>
        <button className="dealbutton" type="button" >

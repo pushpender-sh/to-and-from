@@ -10,7 +10,7 @@ import Body from './Components/Body';
 
 export default function App() {
 
-  const [searchparams, setSearchParams] = useSearchParams();
+  const [searchparams, setSearchParams] = useSearchParams(  );
     const [state, setState] = useState({
       genders: [],
       occasions: [],
