@@ -32,7 +32,7 @@ export default function Header( {state, setState ,searchparams, setSearchParams,
           </button>
 
             <select className="sort-by"
-            value={"SOrt By"}
+            value={"Sort By"}
             onChange={(e)=>{
               searchparams.delete("orderby");
               setSortbyvalue(e.target.value)
@@ -41,8 +41,8 @@ export default function Header( {state, setState ,searchparams, setSearchParams,
           
             }}
             >
-             <option value="" hidden className='sortby-options'>Sort By</option>
-             <option value={"priceASC"}  className='sortby-options'>Price: Low to High</option>
+            <option value="" hidden className='sortby-options'>Sort By</option>
+            <option value={"priceASC"}  className='sortby-options'>Price: Low to High</option>
             <option value={"priceDSC"} className='sortby-options'>Price: High to Low</option>
             <option value={"hotgifts"} className='sortby-options'>Hot Gifts</option>
             <option value={"newest"} className='sortby-options'>Newest</option>

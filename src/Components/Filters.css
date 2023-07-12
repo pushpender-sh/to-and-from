@@ -1,22 +1,26 @@
  .clear{
     margin-left: 1rem;
 }
-button{
-    height: 30px;
-    background-color: #3c8a9b;
-    
-}
 
-.buttons{
+
+.both-buttons{
     margin: 1rem;
     padding: 10px;
     display: flex;
     margin-left: 20px;
 }
+.apply, .clear{
+    background-color: #266270;
+    height: 30px;
+}
 
-.clear:hover, .apply:hover, .bigcross:hover{
+.clear:hover, .apply:hover{
     cursor: pointer;
-    background-color: #1b758a;
+    background-color: #104550;
+}
+.bigcross:hover{
+    cursor: pointer;   
+    background-color: #9abbc1;
 }
 .item{
     background-color: gray;

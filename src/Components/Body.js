@@ -6,20 +6,36 @@ export default function Body({ state, setState, searchparams, setSearchParams,
   genderId, occasionId, relationshipId, setGenderId, setOccasionId, 
   setRelationshipId, sortbyvalue, setSortbyvalue }) {
   
-    function Filtertext(){
+    function filterText(){
       const queryString = window.location.search;
     const hasParameters = queryString.length > 1;
     if(hasParameters){
-      return(
-        <div>Filters: </div>
-      )
+        return (
+        <div className='button-on-body'>
+          <div>Filters: </div>
+            {giveFilter(state.genders, "gender", "Gift For")}
+            {giveFilter(state.occasions, "occasion", "Occasion")}
+            {giveFilter(state.relationships, "relationship", "Relationship")}
+            {giveSortby()}
+
+          <div className='on-body-clear-button' onClick={() => {
+            setSearchParams("")
+            setGenderId("")
+            setOccasionId("")
+            setRelationshipId("")
+       
+          }}>
+            Clear Filters
+          </div>
+        </div>
+      );
     } else{
       return
     }
 
     }
 
-  function giveFilter(data, filterValue) {
+  function giveFilter(data, filterValue, filternameOnScreen) {
     let FindId = searchparams.get(filterValue);
     if (!FindId) {
      // console.log("empty")
@@ -32,14 +48,16 @@ export default function Body({ state, setState, searchparams, setSearchParams,
     })
 
     return (
+
       <span className='filtername'>
         <div>
-          {filterValue}:  
+          {filternameOnScreen}: {""} 
         {filtername}
         </div>
          <div className='cross' onClick={() => {
           searchparams.delete(filterValue)
           setSearchParams(searchparams)
+          
         }}>&times;</div>
       </span>
     )
@@ -59,7 +77,7 @@ export default function Body({ state, setState, searchparams, setSearchParams,
     } else if( findSortby==="newest"){
       displayValue="Sort: Newest"
     } else if(findSortby==="hotgifts"){
-      displayValue="Sort: Hotgifts"
+      displayValue="Sort: Hot Gifts"
     } else if(findSortby==="discount_percentage"){
       displayValue="Sort: Promotion"
     } else if(findSortby==="toandfrom"){
@@ -83,11 +101,7 @@ export default function Body({ state, setState, searchparams, setSearchParams,
 
   return (
     <div className='mainbody'>
-      {Filtertext()}
-      {giveFilter(state.genders, "gender")}
-      {giveFilter(state.occasions, "occasion")}
-      {giveFilter(state.relationships, "relationship")}
-      {giveSortby()}
+      {filterText()}
     </div>
   )
 }

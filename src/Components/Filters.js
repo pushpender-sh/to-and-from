@@ -1,5 +1,5 @@
 import "./Filters.css";
-
+import {BiSolidRightArrow} from 'react-icons/bi'
 
 export default function Filters({buttonstate , state, setState ,searchparams, setSearchParams,  
   genderId , occasionId, relationshipId, setGenderId, setOccasionId, setRelationshipId, sortbyvalue, setSortbyvalue }) {
@@ -41,6 +41,11 @@ function DisplayFilters() {
         relationship: relationshipId,
         orderby: sortbyvalue
       });
+      
+      if(genderId==="" && occasionId==="" && relationshipId===""){
+        setSearchParams("")
+      }
+      
       buttonstate(false);
     }
 
@@ -58,17 +63,15 @@ function DisplayFilters() {
   };
 
   return (
-      <div className="bothbutton">
-          <div className="buttons">
-              <button className="apply" onClick={handleApply}  style={{fontSize:"15px"}}>
+      
+          <div className="both-buttons">
+              <button className="apply" onClick={handleApply}  style={{fontSize:"15px" , color: "white"}}>
                   Apply Changes
               </button>
-              <button className="clear" onClick={handleDelete} style={{fontSize:"15px"}} >
+              <button className="clear" onClick={handleDelete} style={{fontSize:"15px", color: "white"}} >
                   Clear Filters
               </button>
           </div>
-
-      </div>
   );
 }
 
@@ -81,7 +84,7 @@ function DisplayFilters() {
       </div>
       <div>
        <button className="dealbutton" type="button" >
-         Just show me great gifts  </button> <br/><hr/>
+         Just show me great gifts {<BiSolidRightArrow /> }</button> <br/><hr/>
       </div>
   
      { Filteroption(state.genders,"Gender",genderId, setGenderId)}

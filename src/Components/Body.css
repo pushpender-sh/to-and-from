@@ -37,3 +37,17 @@
 .cross:hover{
     cursor: pointer;
 }
+.button-on-body{
+    display: flex;
+    justify-self: flex-end;
+    column-gap: 10px;
+}
+.clear{
+    float: right;
+}
+.on-body-clear-button{
+    color: palevioletred;
+}
+.on-body-clear-button:hover{
+    cursor: pointer;
+}
